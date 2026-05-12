@@ -1,0 +1,291 @@
+/* CarwowFooter.css */
+
+.footer-root {
+  background-color: #1a1a1a;
+  color: #ffffff;
+  width: 100%;
+}
+
+/* Top section */
+.footer-top {
+  padding: 48px 40px 40px;
+  display: grid;
+  grid-template-columns: 220px 1fr 1fr 260px;
+  gap: 32px;
+  border-bottom: 1px solid #333;
+}
+
+@media (max-width: 1024px) {
+  .footer-top {
+    grid-template-columns: 1fr 1fr;
+    padding: 36px 24px 32px;
+  }
+}
+
+@media (max-width: 640px) {
+  .footer-top {
+    grid-template-columns: 1fr;
+    padding: 28px 16px 24px;
+    gap: 24px;
+  }
+}
+
+/* Help Centre block */
+.footer-help h3 {
+  font-size: 15px;
+  font-weight: 700;
+  text-decoration: underline;
+  margin: 0 0 14px;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.footer-help h3:hover {
+  color: #ccc;
+}
+
+.footer-help p {
+  font-size: 13px;
+  color: #ccc;
+  margin: 0 0 4px;
+  line-height: 1.6;
+}
+
+.footer-social {
+  display: flex;
+  gap: 18px;
+  margin-top: 20px;
+  align-items: center;
+}
+
+.footer-social a {
+  color: #fff;
+  font-size: 22px;
+  transition: color 0.2s, transform 0.2s;
+  display: flex;
+  align-items: center;
+}
+
+.footer-social a:hover {
+  color: #aaa;
+  transform: scale(1.1);
+}
+
+/* Nav links */
+.footer-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.footer-nav li a {
+  color: #ccc;
+  text-decoration: underline;
+  font-size: 13.5px;
+  transition: color 0.2s;
+  cursor: pointer;
+}
+
+.footer-nav li a:hover {
+  color: var(--theme-color);
+}
+
+/* Trustpilot block */
+.footer-trust {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+}
+
+@media (max-width: 1024px) {
+  .footer-trust {
+    align-items: flex-start;
+  }
+}
+
+.footer-trust-text {
+  font-size: 14.5px;
+  font-weight: 400;
+  color: #fff;
+  white-space: nowrap;
+}
+
+.footer-trust-text strong {
+  font-weight: 700;
+}
+
+.trustpilot-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.trustpilot-logo span {
+  font-size: 22px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: -0.5px;
+}
+
+.trustpilot-stars {
+  display: flex;
+  gap: 3px;
+  margin-top: 4px;
+}
+
+.star-full {
+  width: 28px;
+  height: 28px;
+  background-color: #00b67a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 16px;
+}
+
+.star-half {
+  width: 28px;
+  height: 28px;
+  background: linear-gradient(90deg, #00b67a 60%, #888 60%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 16px;
+}
+
+/* Bottom bar */
+.footer-bottom {
+  padding: 28px 40px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px 32px;
+  align-items: flex-start;
+}
+
+@media (max-width: 1024px) {
+  .footer-bottom {
+    padding: 24px 24px;
+  }
+}
+
+@media (max-width: 640px) {
+  .footer-bottom {
+    padding: 20px 16px;
+    flex-direction: column;
+  }
+}
+
+.footer-copyright {
+  font-size: 12.5px;
+  color: #ccc;
+  min-width: 160px;
+}
+
+.footer-legal-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 18px;
+  flex: 1;
+}
+
+.footer-legal-links a {
+  color: #ccc;
+  text-decoration: underline;
+  font-size: 12.5px;
+  white-space: nowrap;
+  transition: color 0.2s;
+  cursor: pointer;
+}
+
+.footer-legal-links a:hover {
+  color: var(--theme-color);
+}
+
+/* Country selector */
+.footer-countries {
+  padding: 0 40px 20px;
+  display: flex;
+  gap: 18px;
+  align-items: center;
+}
+
+@media (max-width: 1024px) {
+  .footer-countries {
+    padding: 0 24px 16px;
+  }
+}
+
+@media (max-width: 640px) {
+  .footer-countries {
+    padding: 0 16px 14px;
+  }
+}
+
+.country-link {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: #ccc;
+  text-decoration: underline;
+  font-size: 13px;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.country-link:hover {
+  color: #fff;
+}
+
+.country-link .flag {
+  font-size: 16px;
+}
+
+/* Disclaimer */
+.footer-disclaimer {
+  padding: 0 40px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+@media (max-width: 1024px) {
+  .footer-disclaimer {
+    padding: 0 24px 32px;
+  }
+}
+
+@media (max-width: 640px) {
+  .footer-disclaimer {
+    padding: 0 16px 28px;
+  }
+}
+
+.footer-disclaimer p {
+  font-size: 11.5px;
+  color: #aaa;
+  line-height: 1.7;
+  margin: 0;
+}
+
+.footer-disclaimer a {
+  color: #ccc;
+  text-decoration: underline;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.footer-disclaimer a:hover {
+  color: #fff;
+}
+
+.footer-disclaimer .asterisk-note {
+  font-size: 11.5px;
+  color: #aaa;
+}

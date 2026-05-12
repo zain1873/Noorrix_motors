@@ -1,0 +1,418 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@400;600;700&display=swap');
+
+/* Logo */
+.acc-logo-script {
+  font-family: 'Great Vibes', cursive;
+  font-size: 2.4rem;
+  color: #2d3058;
+  line-height: 1;
+  letter-spacing: 0.01em;
+}
+
+.acc-logo-tagline {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.62rem;
+  letter-spacing: 0.22em;
+  color: #2d3058;
+  text-transform: uppercase;
+  margin-top: 2px;
+}
+
+/* Menu Button */
+.acc-menu-btn {
+  background-color: var(--theme-color);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  width: 72px;
+  /* height: 100%; */
+  min-height: 72px;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background 0.2s;
+  border: none;
+}
+
+.acc-menu-btn:hover {
+  background-color: #b8911e;
+}
+
+.acc-menu-label {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: white;
+}
+
+/* Contact */
+.acc-contact-label {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: #c9a227;
+  margin-bottom: 2px;
+}
+
+.acc-contact-number {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #2d3058;
+  white-space: nowrap;
+  letter-spacing: 0.01em;
+}
+
+/* Social Buttons */
+.acc-social-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  color: white;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.2s;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.acc-social-btn:hover {
+  opacity: 0.85;
+  transform: scale(1.1);
+}
+
+/* Header */
+.acc-header {
+  background: #fffdf5;
+  box-shadow: 0 2px 8px 0 rgba(44, 48, 88, 0.06);
+}
+
+.divider {
+  padding: 0 10px 0 0;
+}
+
+/* Divider */
+.acc-divider {
+  width: 1px;
+  height: 36px;
+  background: #e0d5b8;
+  margin: 0 4px;
+}
+
+/* ─── DRAWER OVERLAY ─────────────────────────────────────── */
+.drawer-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  z-index: 998;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s ease;
+}
+
+.drawer-overlay.open {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* ─── DRAWER PANEL ───────────────────────────────────────── */
+.drawer-panel {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 370px;
+  max-width: 100vw;
+  height: 100vh;
+  background: #1a1a1a;
+  z-index: 999;
+  transform: translateX(-100%);
+  transition: transform 0.38s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.drawer-panel.open {
+  transform: translateX(0);
+}
+
+/* ─── DRAWER HEADER ──────────────────────────────────────── */
+.drawer-header {
+  display: flex;
+  align-items: stretch;
+  min-height: 72px;
+  flex-shrink: 0;
+  border-bottom: 1px solid #2a2a2a;
+}
+
+.drawer-close-btn {
+  background-color: #c9a227;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  width: 72px;
+  flex-shrink: 0;
+  cursor: pointer;
+  border: none;
+  transition: background 0.2s;
+}
+
+.drawer-close-btn:hover {
+  background-color: #b8911e;
+}
+
+.drawer-close-label {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: white;
+}
+
+.drawer-logo-area {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 12px 16px;
+  background: #fff;
+  overflow: hidden;
+}
+
+.drawer-logo-script {
+  font-family: 'Great Vibes', cursive;
+  font-size: 2.2rem;
+  color: #2d3058;
+  line-height: 1;
+}
+
+.drawer-logo-tagline {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.55rem;
+  letter-spacing: 0.2em;
+  color: #2d3058;
+  text-transform: uppercase;
+  margin-top: 2px;
+}
+
+/* ─── DRAWER NAV ─────────────────────────────────────────── */
+.drawer-nav {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.drawer-nav::-webkit-scrollbar {
+  width: 4px;
+}
+.drawer-nav::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 2px;
+}
+
+/* Home row — gold background */
+.drawer-nav-home {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 20px;
+  background: var(--theme-color);
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.drawer-nav-home:hover {
+  background: #b8911e;
+}
+
+.drawer-nav-home span {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.02em;
+}
+
+/* Regular nav rows */
+.drawer-nav-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 15px 20px;
+  border-bottom: 1px solid #2a2a2a;
+  cursor: pointer;
+  transition: background 0.18s;
+  text-decoration: none;
+}
+.services-list-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.service-item-icon {
+  color: #ffff;
+}
+.drawer-nav-item:hover .nav-chevron {
+  color: #fff;
+}
+
+.drawer-nav-item:hover {
+  background: var(--theme-color);
+}
+
+.drawer-nav-item span {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #ffffff;
+  flex: 1;
+}
+
+.drawer-nav-item .nav-icon {
+  color: #ffffff;
+  flex-shrink: 0;
+}
+
+.drawer-nav-item .nav-chevron {
+  color: #888;
+  flex-shrink: 0;
+}
+
+/* Looking to sell — plain text row, no icon */
+.drawer-nav-sell {
+  display: flex;
+  align-items: center;
+  padding: 15px 20px;
+  border-bottom: 1px solid #2a2a2a;
+  cursor: pointer;
+  transition: background 0.18s;
+}
+
+.drawer-nav-sell:hover {
+  background: #242424;
+}
+
+.drawer-nav-sell span {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #ffffff;
+}
+
+/* ─── SERVICES SUB-PANEL ─────────────────────────────────── */
+.services-panel {
+  position: absolute;
+  inset: 0;
+  background: #1a1a1a;
+  transform: translateX(100%);
+  transition: transform 0.32s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+  z-index: 10;
+}
+
+.services-panel.open {
+  transform: translateX(0);
+}
+
+.services-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 0 20px;
+  min-height: 56px;
+  background: #c9a227;
+  flex-shrink: 0;
+}
+
+.services-back-btn {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 0;
+  transition: opacity 0.2s;
+}
+
+.services-back-btn:hover {
+  opacity: 0.75;
+}
+
+.services-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.02em;
+}
+
+.services-icon {
+  color: #fff;
+  flex-shrink: 0;
+}
+
+.services-list {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.services-list-item {
+  display: flex;
+  align-items: center;
+  padding: 17px 22px;
+  border-bottom: 1px solid #2a2a2a;
+  cursor: pointer;
+  transition: background 0.18s;
+  text-decoration: none;
+}
+
+.services-list-item:hover {
+  background: var(--theme-color);
+}
+
+.services-list-item span {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 400;
+  color: #ffffff;
+}
+
+/* ─── RESPONSIVE ─────────────────────────────────────────── */
+@media (max-width: 640px) {
+  .acc-logo-script {
+    font-size: 1.7rem;
+  }
+  .acc-contact-number {
+    font-size: 0.82rem;
+  }
+  .acc-contact-label {
+    font-size: 0.6rem;
+  }
+  .acc-menu-btn {
+    width: 56px;
+    min-height: 60px;
+  }
+  .drawer-panel {
+    width: 100vw;
+  }
+  .drawer-close-btn {
+    width: 56px;
+  }
+  .acc-menu-btn {
+    height: auto;
+  }
+}
