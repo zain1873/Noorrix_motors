@@ -9,14 +9,7 @@
 }
 
 /* === Section Heading === */
-.sec-title {
-  font-size: 42px;
-  font-weight: 700;
-  color: #1a1a1a;
-  margin: 0 0 4px;
-  display: inline-block;
-  position: relative;
-}
+
 
 .sec-title::after {
   content: '';
