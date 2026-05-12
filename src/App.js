@@ -9,7 +9,7 @@ function App() {
       <Navbar />
       <HeroBanner/>
       <FeatureCard/>
-      {/* <Footer /> */}
+      <Footer />
     </>
   );
 }
