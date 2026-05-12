@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./Navbar.css";
+import logo from "../../assets/images/noorix_logo.jpg";
 import {
   FaBars,
   FaTimes,
@@ -84,9 +85,13 @@ function NavDrawer({ open, onClose }) {
             <FaTimes size={20} color="white" />
             <span className="drawer-close-label">Menu</span>
           </button>
-          <div className="drawer-logo-area">
-            <div className="drawer-logo-script">ACC</div>
-            <div className="drawer-logo-tagline">Affordable Car Centre</div>
+          {/* Logo */}
+          <div className="flex items-center justify-center logo">
+            <img
+              src={logo}
+              alt="ACC Logo"
+              className="w-14 h-14 object-contain"
+            />
           </div>
         </div>
 
@@ -178,10 +183,13 @@ export default function AffordableCarCentreHeader() {
             <span className="acc-menu-label">Menu</span>
           </button>
 
-          {/* Logo */}
-          <div className="flex flex-col justify-center pl-4 pr-6 py-2" style={{ minWidth: 140 }}>
-            <div className="acc-logo-script">ACC</div>
-            <div className="acc-logo-tagline">Affordable Car Centre</div>
+         {/* Logo */}
+          <div className="flex items-center justify-center logo">
+            <img
+              src={logo}
+              alt="ACC Logo"
+              className="w-14 h-14 object-contain"
+            />
           </div>
 
           {/* Spacer */}

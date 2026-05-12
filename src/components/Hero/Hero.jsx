@@ -1,4 +1,5 @@
 import { FaFacebookF, FaLinkedinIn, FaInstagram, FaWhatsapp } from "react-icons/fa";
+import HeroFilter from "../HeroFilter/Filter";
 import "./Hero.css";
 
 const socialLinks = [
@@ -16,15 +17,25 @@ export default function HeroBanner() {
       {/* Dark Overlay */}
       <div className="hero-overlay" />
 
-      {/* Content */}
-      <div className="hero-content">
-        <h1 className="hero-title">
-          Discover, Compare &amp; <br />
-          Drive – All in One Place
-        </h1>
-        <p className="hero-subtitle">
-          Browse a wide selection of vehicles with transparent pricing and hassle-free service.
-        </p>
+      {/* 30 / 70 inner grid */}
+      <div className="hero-inner">
+
+        {/* LEFT – Filter (30%) */}
+        <div className="hero-filter-col">
+          <HeroFilter />
+        </div>
+
+        {/* RIGHT – Text content (70%) */}
+        <div className="hero-content">
+          <h1 className="hero-title">
+            Discover, Compare &amp; <br />
+            Drive – All in One Place
+          </h1>
+          <p className="hero-subtitle">
+            Browse a wide selection of vehicles with transparent pricing and hassle-free service.
+          </p>
+        </div>
+
       </div>
 
       {/* Social Sidebar */}

@@ -9,7 +9,7 @@
 ========================= */
 :root {
   /* Brand Colors */
-  --theme-color: #c9a227;
+  --theme-color: #ac1c7a;
   --secondary-color: #c9a227;
   --background-color: #fffdf5;
   --text-color: #2d3058;
@@ -77,4 +77,17 @@ button {
 /* Script Font Utility */
 .font-script {
   font-family: var(--font-script);
+}
+
+
+/* --------- section padding ---------- */
+.sp {
+  padding: 70px 20px;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .sp {
+    padding: 40px 14px;
+  }
 }

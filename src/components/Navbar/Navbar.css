@@ -37,7 +37,7 @@
 }
 
 .acc-menu-btn:hover {
-  background-color: #b8911e;
+  background-color: #000;
 }
 
 .acc-menu-label {
@@ -54,7 +54,7 @@
   font-family: 'Montserrat', sans-serif;
   font-size: 0.7rem;
   font-weight: 600;
-  color: #c9a227;
+  color: var(--theme-color);
   margin-bottom: 2px;
 }
 
@@ -87,10 +87,21 @@
   opacity: 0.85;
   transform: scale(1.1);
 }
+.logo {
+  width: 230px;
+  height: 100px;
+
+}
+.logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+}
 
 /* Header */
 .acc-header {
-  background: #fffdf5;
+  background: #ffff;
   box-shadow: 0 2px 8px 0 rgba(44, 48, 88, 0.06);
 }
 
@@ -149,11 +160,11 @@
   align-items: stretch;
   min-height: 72px;
   flex-shrink: 0;
-  border-bottom: 1px solid #2a2a2a;
+  background-color: #ffff;
 }
 
 .drawer-close-btn {
-  background-color: #c9a227;
+  background-color: var(--theme-color);
   color: white;
   display: flex;
   flex-direction: column;
@@ -168,7 +179,7 @@
 }
 
 .drawer-close-btn:hover {
-  background-color: #b8911e;
+  background-color: #000;
 }
 
 .drawer-close-label {
@@ -230,10 +241,6 @@
   background: var(--theme-color);
   cursor: pointer;
   transition: background 0.2s;
-}
-
-.drawer-nav-home:hover {
-  background: #b8911e;
 }
 
 .drawer-nav-home span {
@@ -315,6 +322,7 @@
 .services-panel {
   position: absolute;
   inset: 0;
+  top: 75px;
   background: #1a1a1a;
   transform: translateX(100%);
   transition: transform 0.32s cubic-bezier(0.4, 0, 0.2, 1);
@@ -325,6 +333,7 @@
 
 .services-panel.open {
   transform: translateX(0);
+  top: 75px;
 }
 
 .services-header {
@@ -333,7 +342,7 @@
   gap: 14px;
   padding: 0 20px;
   min-height: 56px;
-  background: #c9a227;
+  background: var(--theme-color);
   flex-shrink: 0;
 }
 
