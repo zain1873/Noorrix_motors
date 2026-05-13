@@ -16,9 +16,9 @@ function App() {
       <FeatureCard/>
       <ServicesSlider/>
       <WhyChooseUs/>
-      <BrowseByBudget/>
-      <StockSubscribeBanner/>
-      <NoorrixFooter/>
+      {/* <BrowseByBudget/> */}
+      {/* <StockSubscribeBanner/> */}
+      {/* <NoorrixFooter/> */}
 
 
 {/* ___Whatsap btn____ */}
