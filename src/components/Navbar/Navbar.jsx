@@ -12,33 +12,76 @@ import {
   FaShuttleVan,
   FaTh,
   FaWrench,
-  FaMoneyBillWave,
-  FaInfoCircle,
   FaPhone,
   FaChevronDown,
   FaChevronLeft,
-  FaExchangeAlt, 
-  FaTruck,        
-  FaTools,         
-  FaShieldAlt,    
-  FaCertificate,   
-
+  FaExchangeAlt,
+  FaTruck,
+  FaTools,
+  FaShieldAlt,
+  FaCertificate,
+  FaHeart,
+  FaPhoneVolume,
+  FaPhoneAlt,
+  FaCarSide,
+  FaTruckMoving,
+  FaSprayCan,
+  FaHammer,
+  FaInfoCircle,
+  FaMoneyBillWave,
 } from "react-icons/fa";
+
+// ─── Mobile Contact Dropdown ──────────────────────────────────────────────────
+function MobileContactDropdown({ open, onClose }) {
+  return (
+    <>
+      {/* Backdrop */}
+      {open && (
+        <div className="mobile-contact-backdrop" onClick={onClose} />
+      )}
+
+      {/* Dropdown Panel */}
+      <div className={`mobile-contact-dropdown${open ? " open" : ""}`}>
+        <h3 className="mobile-contact-title">Contact Information</h3>
+        <p className="mobile-contact-subtitle">
+          Click any of the numbers below to call us directly.
+        </p>
+
+        <div className="mobile-contact-numbers">
+          {/* Number 1 */}
+          <a href="tel:07399999188" className="mobile-contact-num-item">
+            <FaPhoneVolume size={22} className="mobile-contact-num-icon" />
+            <span>07399999188</span>
+          </a>
+
+          {/* Number 2 */}
+          <a href="tel:01234637805" className="mobile-contact-num-item">
+            <FaPhoneAlt size={22} className="mobile-contact-num-icon" />
+            <span>01234637805</span>
+          </a>
+        </div>
+
+        <button className="mobile-contact-close-btn" onClick={onClose}>
+          Close
+        </button>
+      </div>
+    </>
+  );
+}
 
 // ─── Services Sub-Panel ───────────────────────────────────────────────────────
 function ServicesPanel({ open, onBack }) {
 const items = [
   { label: "Part Exchange", icon: FaExchangeAlt },
-  { label: "Vehicle Sourcing", icon: FaCar },
-  { label: "Delivery", icon: FaTruck },
+  { label: "Vehicle Sourcing", icon: FaCarSide },
+  { label: "Delivery", icon: FaTruckMoving },
   { label: "Servicing", icon: FaTools },
-  { label: "AA Standards", icon: FaCertificate },
-  { label: "Warranty", icon: FaShieldAlt },
+  { label: "Denting", icon: FaHammer },
+  { label: "Painting", icon: FaSprayCan },
 ];
 
   return (
     <div className={`services-panel${open ? " open" : ""}`}>
-      {/* Header */}
       <div className="services-header">
         <FaWrench size={18} className="services-icon" />
         <button className="services-back-btn" onClick={onBack} aria-label="Back">
@@ -46,16 +89,14 @@ const items = [
         </button>
         <span className="services-title">Services</span>
       </div>
-
-      {/* List */}
-        <div className="services-list">
-          {items.map(({ label, icon: Icon }) => (
-            <a href="#" className="services-list-item" key={label}>
-              <Icon size={16} className="service-item-icon" />
-              <span>{label}</span>
-            </a>
-          ))}
-        </div>
+      <div className="services-list">
+        {items.map(({ label, icon: Icon }) => (
+          <a href="#" className="services-list-item" key={label}>
+            <Icon size={16} className="service-item-icon" />
+            <span>{label}</span>
+          </a>
+        ))}
+      </div>
     </div>
   );
 }
@@ -71,62 +112,41 @@ function NavDrawer({ open, onClose }) {
 
   return (
     <>
-      {/* Overlay */}
       <div
         className={`drawer-overlay${open ? " open" : ""}`}
         onClick={handleClose}
       />
-
-      {/* Drawer Panel */}
       <div className={`drawer-panel${open ? " open" : ""}`}>
-        {/* Drawer Header */}
         <div className="drawer-header">
           <button className="drawer-close-btn" onClick={handleClose} aria-label="Close menu">
             <FaTimes size={20} color="white" />
             <span className="drawer-close-label">Menu</span>
           </button>
-          {/* Logo */}
           <div className="flex items-center justify-center logo">
-            <img
-              src={logo}
-              alt="ACC Logo"
-              className="w-14 h-14 object-contain"
-            />
+            <img src={logo} alt="ACC Logo" className="w-14 h-14 object-contain" />
           </div>
         </div>
 
-        {/* Nav Items */}
         <nav className="drawer-nav">
-          {/* Home — gold */}
           <a href="#" className="drawer-nav-home">
             <FaHome size={18} color="white" />
             <span>Home</span>
           </a>
-
-          {/* Used Cars */}
           <a href="#" className="drawer-nav-item">
             <FaCar size={18} className="nav-icon" />
             <span>Used Cars</span>
           </a>
-
-          {/* Used Vans */}
           <a href="#" className="drawer-nav-item">
             <FaShuttleVan size={18} className="nav-icon" />
             <span>Used Vans</span>
           </a>
-
-          {/* Finance */}
           <a href="#" className="drawer-nav-item">
             <FaMoneyBillWave size={18} className="nav-icon" />
             <span>Finance</span>
           </a>
-
-          {/* Looking to sell */}
           <div className="drawer-nav-sell">
             <span>Looking to sell?</span>
           </div>
-
-          {/* Services — opens sub-panel */}
           <div
             className="drawer-nav-item"
             onClick={() => setServicesOpen(true)}
@@ -138,27 +158,20 @@ function NavDrawer({ open, onClose }) {
             <span>Services</span>
             <FaChevronDown size={12} className="nav-chevron" />
           </div>
-
-          {/* About */}
           <a href="#" className="drawer-nav-item">
             <FaInfoCircle size={18} className="nav-icon" />
             <span>About</span>
           </a>
-
-          {/* Our Stock */}
           <a href="#" className="drawer-nav-item">
             <FaTh size={18} className="nav-icon" />
             <span>Our Stock</span>
           </a>
-
-          {/* Contact */}
           <a href="#" className="drawer-nav-item">
             <FaPhone size={18} className="nav-icon" />
             <span>Contact</span>
           </a>
         </nav>
 
-        {/* Services Sub-Panel (slides over drawer) */}
         <ServicesPanel open={servicesOpen} onBack={() => setServicesOpen(false)} />
       </div>
     </>
@@ -168,11 +181,13 @@ function NavDrawer({ open, onClose }) {
 // ─── Main Header ──────────────────────────────────────────────────────────────
 export default function AffordableCarCentreHeader() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [contactOpen, setContactOpen] = useState(false);
 
   return (
     <>
-      <header className="acc-header w-full">
+      <header className="acc-header w-full acc-header-relative">
         <div className="flex items-stretch w-full" style={{ minHeight: 72 }}>
+
           {/* Menu Button */}
           <button
             className="acc-menu-btn"
@@ -183,69 +198,80 @@ export default function AffordableCarCentreHeader() {
             <span className="acc-menu-label">Menu</span>
           </button>
 
-         {/* Logo */}
+          {/* Logo */}
           <div className="flex items-center justify-center logo">
-            <img
-              src={logo}
-              alt="ACC Logo"
-              className="w-14 h-14 object-contain"
-            />
+            <img src={logo} alt="ACC Logo" className="w-14 h-14 object-contain" />
           </div>
 
           {/* Spacer */}
           <div className="flex-1" />
 
-          {/* Contact Info + Social */}
-          <div className="flex items-center gap-4 px-4 sm:px-6">
-            <div className="hidden sm:block" />
+          {/* ─── Right Side ─────────────────────────────────────── */}
+          <div className="flex items-center gap-3 px-4 sm:px-6">
 
-            {/* Phone */}
-            <div className="hidden sm:flex flex-col items-start divider">
-              <span className="acc-contact-label">Call Us Today</span>
-              <span className="acc-contact-number">01234 900 786</span>
+            {/* Heart — desktop only */}
+            <button className="acc-icon-outline-btn acc-desktop-only" aria-label="Saved">
+              <FaHeart size={16} />
+            </button>
+
+            {/* Reviews — desktop only */}
+            <button className="acc-reviews-btn acc-desktop-only">Reviews</button>
+
+            {/* Contact Us — desktop only */}
+            <button className="acc-contact-us-btn acc-desktop-only">Contact Us</button>
+
+            {/* Phone Numbers — desktop only */}
+            <div className="acc-desktop-only acc-phone-block">
+              <div className="flex items-center gap-2">
+                <FaPhoneVolume size={13} color="#2d3058" />
+                <span className="acc-contact-number">07399999188</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <FaPhoneAlt size={13} color="#2d3058" />
+                <span className="acc-contact-number">01234637805</span>
+              </div>
             </div>
 
-            {/* WhatsApp */}
-            <div className="hidden sm:flex flex-col items-start">
-              <span className="acc-contact-label">Whatsapp</span>
-              <span className="acc-contact-number">07375 730421</span>
-            </div>
+            {/* WhatsApp — always visible */}
+            <a
+              href="https://wa.me/447399999188"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="acc-social-btn"
+              style={{ backgroundColor: "#25D366" }}
+              aria-label="WhatsApp"
+            >
+              <FaWhatsapp size={20} />
+            </a>
 
-            {/* Social Icons */}
-            <div className="flex items-center gap-2 ml-2">
-              <a
-                href="#"
-                className="acc-social-btn"
-                style={{ background: "#25D366" }}
-                aria-label="WhatsApp"
-              >
-                <FaWhatsapp size={17} />
-              </a>
-              <a
-                href="#"
-                className="acc-social-btn"
-                style={{ background: "#1877F3" }}
-                aria-label="Facebook"
-              >
-                <FaFacebookF size={15} />
-              </a>
-              <a
-                href="#"
-                className="acc-social-btn"
-                style={{
-                  background:
-                    "radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%)",
-                }}
-                aria-label="Instagram"
-              >
-                <FaInstagram size={16} />
-              </a>
-            </div>
+            {/* Phone icon — mobile only */}
+            <button
+              className="acc-mobile-icon-btn acc-mobile-only hidden"
+              style={{ backgroundColor: "#6c5ce7" }}
+              onClick={() => setContactOpen((v) => !v)}
+              aria-label="Call us"
+            >
+              <FaPhoneAlt size={17} color="#fff" />
+            </button>
+
+            {/* Heart icon — mobile only */}
+            <button
+              className="acc-mobile-icon-btn acc-mobile-only acc-mobile-heart hidden"
+              aria-label="Saved"
+            >
+              <FaHeart size={17} color="#6c5ce7" />
+            </button>
+
           </div>
         </div>
+
+        {/* Mobile Contact Dropdown */}
+        <MobileContactDropdown
+          open={contactOpen}
+          onClose={() => setContactOpen(false)}
+        />
       </header>
 
-      {/* Nav Drawer */}
       <NavDrawer open={menuOpen} onClose={() => setMenuOpen(false)} />
     </>
   );

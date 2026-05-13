@@ -22,9 +22,10 @@
 }
 
 .section-heading p {
-  font-size: 13px;
-  color: #888;
+  font-size: 14px;
+  color: #fff;
   margin: 8px 0 16px;
+  margin-bottom: 50px;
 }
 
 /* === Card === */

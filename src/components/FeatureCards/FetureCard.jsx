@@ -94,7 +94,7 @@ const FeatureCard = () => {
   const [imgHovered, setImgHovered] = useState(null);
 
   return (
-    <div className="card-wrapper sp">
+    <div className="card-wrapper wrapper sp">
       {/* Section Heading */}
       <div className="section-heading">
         <h2 className="sec-title">Dealer's Top Picks</h2>

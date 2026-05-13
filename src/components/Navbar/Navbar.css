@@ -28,7 +28,6 @@
   justify-content: center;
   gap: 4px;
   width: 72px;
-  /* height: 100%; */
   min-height: 72px;
   cursor: pointer;
   flex-shrink: 0;
@@ -87,22 +86,27 @@
   opacity: 0.85;
   transform: scale(1.1);
 }
+
 .logo {
   width: 230px;
   height: 100px;
-
 }
+
 .logo img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-
 }
 
 /* Header */
 .acc-header {
   background: #ffff;
   box-shadow: 0 2px 8px 0 rgba(44, 48, 88, 0.06);
+}
+
+.acc-header-relative {
+  position: relative;
+  z-index: 100;
 }
 
 .divider {
@@ -115,6 +119,186 @@
   height: 36px;
   background: #e0d5b8;
   margin: 0 4px;
+}
+
+/* ─── RIGHT SIDE BUTTONS ─────────────────────────────────── */
+
+/* Outline icon button (heart) — desktop */
+.acc-icon-outline-btn {
+  width: 38px;
+  height: 38px;
+  border-radius: 8px;
+  border: 1.5px solid #d0cde1;
+  background: #fff;
+  color: #2d3058;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s;
+  flex-shrink: 0;
+}
+
+.acc-icon-outline-btn:hover {
+  border-color: var(--theme-color);
+  color: var(--theme-color);
+}
+
+/* Reviews button */
+.acc-reviews-btn {
+  background: var(--theme-color);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 9px 20px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s;
+  white-space: nowrap;
+}
+
+/* Contact Us button */
+.acc-contact-us-btn {
+  background: #1a1a1a;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 9px 20px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s;
+  white-space: nowrap;
+}
+
+.acc-contact-us-btn:hover {
+  background: #333;
+}
+
+/* Phone block — desktop */
+.acc-phone-block {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+}
+
+/* ─── DESKTOP / MOBILE VISIBILITY HELPERS ────────────────── */
+.acc-desktop-only {
+  display: flex;
+}
+
+
+/* ─── MOBILE ICON BUTTONS ────────────────────────────────── */
+.acc-mobile-icon-btn {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  border: none;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--theme-color) !important;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: opacity 0.2s, transform 0.2s;
+}
+
+.acc-mobile-icon-btn:hover {
+  opacity: 0.85;
+  transform: scale(1.06);
+}
+
+.acc-mobile-heart svg {
+  color: #ffff !important;
+}
+
+/* ─── MOBILE CONTACT DROPDOWN ────────────────────────────── */
+.mobile-contact-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 98;
+}
+
+.mobile-contact-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: #fff;
+  border-top: 2px solid var(--theme-color);
+  box-shadow: 0 8px 32px rgba(44, 48, 88, 0.18);
+  padding: 20px 20px 16px;
+  z-index: 99;
+  transform: translateY(-8px);
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 0.28s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.22s ease;
+}
+
+.mobile-contact-dropdown.open {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: all;
+}
+
+.mobile-contact-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #2d3058;
+  margin: 0 0 4px;
+}
+
+.mobile-contact-subtitle {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.78rem;
+  color: #666;
+  margin: 0 0 16px;
+}
+
+.mobile-contact-numbers {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.mobile-contact-num-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  flex: 1;
+  min-width: 140px;
+}
+
+.mobile-contact-num-item span {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #2d3058;
+}
+
+.mobile-contact-num-icon {
+  color: #000;
+  flex-shrink: 0;
+}
+
+.mobile-contact-close-btn {
+  width: 100%;
+  background: #000 !important;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 12px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s;
 }
 
 /* ─── DRAWER OVERLAY ─────────────────────────────────────── */
@@ -232,7 +416,6 @@
   border-radius: 2px;
 }
 
-/* Home row — gold background */
 .drawer-nav-home {
   display: flex;
   align-items: center;
@@ -251,7 +434,6 @@
   letter-spacing: 0.02em;
 }
 
-/* Regular nav rows */
 .drawer-nav-item {
   display: flex;
   align-items: center;
@@ -262,6 +444,7 @@
   transition: background 0.18s;
   text-decoration: none;
 }
+
 .services-list-item {
   display: flex;
   align-items: center;
@@ -271,6 +454,7 @@
 .service-item-icon {
   color: #ffff;
 }
+
 .drawer-nav-item:hover .nav-chevron {
   color: #fff;
 }
@@ -297,7 +481,6 @@
   flex-shrink: 0;
 }
 
-/* Looking to sell — plain text row, no icon */
 .drawer-nav-sell {
   display: flex;
   align-items: center;
@@ -317,7 +500,6 @@
   font-weight: 500;
   color: #ffffff;
 }
-
 /* ─── SERVICES SUB-PANEL ─────────────────────────────────── */
 .services-panel {
   position: absolute;
@@ -401,6 +583,25 @@
 }
 
 /* ─── RESPONSIVE ─────────────────────────────────────────── */
+@media (max-width: 900px) {
+   .acc-desktop-only {
+    display: none;
+  }
+  .acc-mobile-icon-btn {
+    display: block;
+  }
+    .acc-mobile-only {
+    display: flex !important;
+  }
+  .acc-social-btn {
+    display: none;
+  }
+  
+}
+
+@media (max-width: 768px) {
+ 
+}
 @media (max-width: 640px) {
   .acc-logo-script {
     font-size: 1.7rem;
@@ -414,14 +615,23 @@
   .acc-menu-btn {
     width: 56px;
     min-height: 60px;
+    height: auto;
   }
+
   .drawer-panel {
     width: 100vw;
   }
   .drawer-close-btn {
     width: 56px;
   }
-  .acc-menu-btn {
-    height: auto;
+
+  /* Hide desktop-only elements */
+  .acc-desktop-only {
+    display: none !important;
+  }
+
+  /* Show mobile-only elements */
+  .acc-mobile-only {
+    display: flex !important;
   }
 }

@@ -87,10 +87,12 @@ button {
 .sec-title {
   font-size: 42px;
   font-weight: 700;
-  color: #1a1a1a;
-  margin: 0 0 4px;
+  color: #fff;
   display: inline-block;
   position: relative;
+}
+.wrapper {
+  background-color: #292525;
 }
 
 /* Mobile */
@@ -100,5 +102,6 @@ button {
   }
   .sec-title {
   font-size: 32px;
+  line-height: 38px;
 }
 }
