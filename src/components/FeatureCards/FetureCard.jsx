@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
@@ -91,6 +92,7 @@ const carData = [
 
 
 const FeatureCard = () => {
+  const navigate = useNavigate();
   const [imgHovered, setImgHovered] = useState(null);
 
   return (
@@ -118,7 +120,7 @@ const FeatureCard = () => {
       >
         {carData.map((car) => (
           <SwiperSlide key={car.id}>
-            <div className="mazda-card">
+            <div className="mazda-card" onClick={() => navigate("/cars")}>
               {/* Image Section */}
               <div
                 className="card-image-container"

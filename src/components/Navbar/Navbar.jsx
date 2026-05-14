@@ -76,8 +76,7 @@ const items = [
   { label: "Vehicle Sourcing", icon: FaCarSide },
   { label: "Delivery", icon: FaTruckMoving },
   { label: "Servicing", icon: FaTools },
-  { label: "Denting", icon: FaHammer },
-  { label: "Painting", icon: FaSprayCan },
+  { label: "Dents and Paints", icon: FaSprayCan },
 ];
 
   return (

@@ -103,7 +103,7 @@ const NoorrixFooter = () => {
       {/* Bottom Bar */}
       <div className="footer-bottom">
         <div className="footer-copyright">
-          © 2026 Noorrix Ltd. All rights reserved
+          © 2026 Noorrix Ltd. All rights reserved. <br /> Crafted by Two Core Global
         </div>
         <div className="footer-legal-links">
           {legalLinks.map((link) => (
