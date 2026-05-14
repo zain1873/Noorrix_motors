@@ -47,6 +47,9 @@ a {
   text-decoration: none;
   color: inherit;
 }
+.breadcrumb:hover{
+  color: var(--theme-color) !important;
+}
 
 /* Buttons */
 button {

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import "./Navbar.css";
 import logo from "../../assets/images/noorix_logo.jpg";
 import {
@@ -89,12 +90,20 @@ const items = [
         <span className="services-title">Services</span>
       </div>
       <div className="services-list">
-        {items.map(({ label, icon: Icon }) => (
-          <a href="#" className="services-list-item" key={label}>
-            <Icon size={16} className="service-item-icon" />
-            <span>{label}</span>
-          </a>
-        ))}
+        {items.map(({ label, icon: Icon }) => {
+          let linkTo = "#";
+          if (label === "Part Exchange") linkTo = "/part-exchange";
+          if (label === "Vehicle Sourcing") linkTo = "/vehicle-sourcing";
+          if (label === "Delivery") linkTo = "/delivery";
+          if (label === "Servicing") linkTo = "/servicing";
+          if (label === "Dents and Paints") linkTo = "/dents-paints";
+          return (
+            <Link to={linkTo} className="services-list-item" key={label}>
+              <Icon size={16} className="service-item-icon" />
+              <span>{label}</span>
+            </Link>
+          );
+        })}
       </div>
     </div>
   );
@@ -127,22 +136,22 @@ function NavDrawer({ open, onClose }) {
         </div>
 
         <nav className="drawer-nav">
-          <a href="#" className="drawer-nav-home">
+          <Link to="/" className="drawer-nav-home">
             <FaHome size={18} color="white" />
             <span>Home</span>
-          </a>
-          <a href="#" className="drawer-nav-item">
+          </Link>
+          <Link to="/cars" className="drawer-nav-item">
             <FaCar size={18} className="nav-icon" />
             <span>Used Cars</span>
-          </a>
-          <a href="#" className="drawer-nav-item">
+          </Link>
+          <Link to="/vans" className="drawer-nav-item">
             <FaShuttleVan size={18} className="nav-icon" />
             <span>Used Vans</span>
-          </a>
-          <a href="#" className="drawer-nav-item">
+          </Link>
+          <Link to="/finance" className="drawer-nav-item">
             <FaMoneyBillWave size={18} className="nav-icon" />
             <span>Finance</span>
-          </a>
+          </Link>
           <div className="drawer-nav-sell">
             <span>Looking to sell?</span>
           </div>
@@ -157,18 +166,18 @@ function NavDrawer({ open, onClose }) {
             <span>Services</span>
             <FaChevronDown size={12} className="nav-chevron" />
           </div>
-          <a href="#" className="drawer-nav-item">
+          <Link to="/about" className="drawer-nav-item">
             <FaInfoCircle size={18} className="nav-icon" />
             <span>About</span>
-          </a>
-          <a href="#" className="drawer-nav-item">
+          </Link>
+          <Link to="/stock" className="drawer-nav-item">
             <FaTh size={18} className="nav-icon" />
             <span>Our Stock</span>
-          </a>
-          <a href="#" className="drawer-nav-item">
+          </Link>
+          <Link to="/contact" className="drawer-nav-item">
             <FaPhone size={18} className="nav-icon" />
             <span>Contact</span>
-          </a>
+          </Link>
         </nav>
 
         <ServicesPanel open={servicesOpen} onBack={() => setServicesOpen(false)} />
