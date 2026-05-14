@@ -451,7 +451,8 @@ export default function CarsListing() {
       </div>
 
       {/* ── Page body ── */}
-      <div className="listing-container">
+      <div className="wrapper">
+      <div className="listing-container ">
         <a href="#" className="back-btn">
           <FiChevronLeft size={18} /> Back
         </a>
@@ -489,6 +490,7 @@ export default function CarsListing() {
 
         </div>
 
+      </div>
       </div>
               
           {/* ── NEW SECTIONS ADDED BELOW ── */}

@@ -130,9 +130,9 @@ function NavDrawer({ open, onClose }) {
             <FaTimes size={20} color="white" />
             <span className="drawer-close-label">Menu</span>
           </button>
-          <div className="flex items-center justify-center logo">
+          <Link to="/" className="flex items-center justify-center logo">
             <img src={logo} alt="ACC Logo" className="w-14 h-14 object-contain" />
-          </div>
+          </Link>
         </div>
 
         <nav className="drawer-nav">
@@ -206,10 +206,10 @@ export default function AffordableCarCentreHeader() {
             <span className="acc-menu-label">Menu</span>
           </button>
 
-          {/* Logo */}
-          <div className="flex items-center justify-center logo">
+          {/* Logo - links to home */}
+          <Link to="/" className="flex items-center justify-center logo">
             <img src={logo} alt="ACC Logo" className="w-14 h-14 object-contain" />
-          </div>
+          </Link>
 
           {/* Spacer */}
           <div className="flex-1" />

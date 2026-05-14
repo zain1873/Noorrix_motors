@@ -1021,7 +1021,7 @@ body {
 .do-read-more {
   background: none;
   border: none;
-  color: #2563eb;
+  color: var(--theme-color);
   font-size: 13px;
   font-weight: 700;
   cursor: pointer;
@@ -1032,6 +1032,9 @@ body {
 
 .do-read-more:hover {
   opacity: 0.75;
+}
+.do-overview {
+  padding: 12px;
 }
 
 .do-overview-title {
@@ -1068,7 +1071,7 @@ body {
   width: 52px;
   height: 52px;
   border-radius: 50%;
-  background: #3b3bdb;
+  background: var(--theme-color);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1123,10 +1126,8 @@ body {
 
 .vd-wrapper {
   background: #111111;
-  border-radius: 12px;
   padding: 36px 32px 28px;
   margin-top: 16px;
-  font-family: 'Nunito Sans', sans-serif;
   color: #fff;
 }
 
@@ -1195,7 +1196,7 @@ body {
 }
 
 .vd-acc-accent {
-  color: #c9972a;
+  color: var(--theme-color);
 }
 
 .vd-acc-white {
