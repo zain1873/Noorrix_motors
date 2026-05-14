@@ -1,3 +1,5 @@
+import React from "react";
+
 import Navbar from "../components/Navbar/Navbar";
 import HeroBanner from "../components/Hero/Hero";
 import FeatureCard from "../components/FeatureCards/FetureCard";
@@ -10,6 +12,7 @@ import NoorrixFooter from "../components/Footer/Footer";
 import BrowseByBudget from "../components/Browsebybudget/Budget";
 import WhatsAppButton from "../components/WhatsApp/WhatsAppButton";
 import PopularSearches from "../components/PoppularSearched/popularSearched";
+import CarsListing from "./CarDetails/CarDetails";
 
 function Home() {
   return (
@@ -23,6 +26,8 @@ function Home() {
       <BrowseByBudget/>
       <Testimonial/>
       <Faqs/>
+      
+      <CarsListing/>
       <StockSubscribeBanner/>
       <NoorrixFooter/>
     </>

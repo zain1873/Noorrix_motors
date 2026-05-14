@@ -90,7 +90,7 @@
 }
 
 .footer-nav li a:hover {
-  color: var(--theme-color);
+  color: var(--theme-color);  
 }
 
 /* Trustpilot block */
