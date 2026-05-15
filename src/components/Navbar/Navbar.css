@@ -98,15 +98,25 @@
   object-fit: cover;
 }
 
-/* Header */
+/* ─── STICKY HEADER ──────────────────────────────────────── */
 .acc-header {
   background: #ffff;
   box-shadow: 0 2px 8px 0 rgba(44, 48, 88, 0.06);
 }
 
-.acc-header-relative {
-  position: relative;
+/* Replaces acc-header-relative — sticky with smooth hide/show */
+.acc-header-sticky {
+  position: sticky;
+  top: 0;
   z-index: 100;
+  transform: translateY(0);
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+              box-shadow 0.35s ease;
+}
+
+.acc-header-hidden {
+  transform: translateY(-100%);
+  box-shadow: none;
 }
 
 .divider {

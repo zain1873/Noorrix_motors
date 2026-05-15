@@ -1,21 +1,48 @@
-import React, { useState, useRef } from "react";
-import { FiTrendingUp, FiChevronLeft, FiChevronRight } from "react-icons/fi";
+import React, { useState } from "react";
+import { FiTrendingUp } from "react-icons/fi";
 import "./popularSearched.css";
+
+// Car brand logos from assets folder
+import volkswagenLogo from "../../assets/images/cars logo/volkswagen-01.png";
+import audiLogo from "../../assets/images/cars logo/audi-01.png";
+import mercedesLogo from "../../assets/images/cars logo/Mercedes-01.png";
+import toyotaLogo from "../../assets/images/cars logo/toyota-01.png";
+import nissanLogo from "../../assets/images/cars logo/nissan-01.png";
+import landRoverLogo from "../../assets/images/cars logo/land rover-01.png";
+import kiaLogo from "../../assets/images/cars logo/Kia-01.png";
+import citroenLogo from "../../assets/images/cars logo/Citroen-01.png";
+import fiatLogo from "../../assets/images/cars logo/fiat-01.png";
+import hondaLogo from "../../assets/images/cars logo/honda-01.png";
+import hyundaiLogo from "../../assets/images/cars logo/hyundai.png";
+import jeepLogo from "../../assets/images/cars logo/jeep-01.png";
+import mazdaLogo from "../../assets/images/cars logo/mazda-01.png";
+import mgLogo from "../../assets/images/cars logo/MG-01.png";
+import miniLogo from "../../assets/images/cars logo/MINI-01.png";
+import renaultLogo from "../../assets/images/cars logo/Renault-01.png";
+import seatLogo from "../../assets/images/cars logo/SEAT-01.png";
 
 const tabs = ["Make", "Body Type", "Fuel", "Gearbox", "Trending"];
 
 const makeItems = [
-  { label: "Volkswagen", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Volkswagen_logo_2019.svg/120px-Volkswagen_logo_2019.svg.png" },
-  { label: "Audi", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Audi-Logo_2016.svg/120px-Audi-Logo_2016.svg.png" },
+  { label: "Volkswagen", logo: volkswagenLogo },
+  { label: "Audi", logo: audiLogo },
   { label: "BMW", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/BMW.svg/120px-BMW.svg.png" },
-  { label: "Mercedes", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Mercedes-Logo.svg/120px-Mercedes-Logo.svg.png" },
+  { label: "Mercedes", logo: mercedesLogo },
   { label: "Ford", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Ford_logo_flat.svg/120px-Ford_logo_flat.svg.png" },
-  { label: "Toyota", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Toyota_carlogo.svg/120px-Toyota_carlogo.svg.png" },
-  { label: "Nissan", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Nissan_2020_logo.svg/120px-Nissan_2020_logo.svg.png" },
-  { label: "Vauxhall", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Vauxhall_logo.svg/120px-Vauxhall_logo.svg.png" },
-  { label: "Land Rover", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Land_Rover_logo.svg/120px-Land_Rover_logo.svg.png" },
-  { label: "Kia", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Kia-logo.svg/120px-Kia-logo.svg.png" },
-  { label: "Porsche", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Porsche_logo.svg/120px-Porsche_logo.svg.png" },
+  { label: "Toyota", logo: toyotaLogo },
+  { label: "Nissan", logo: nissanLogo },
+  { label: "Land Rover", logo: landRoverLogo },
+  { label: "Kia", logo: kiaLogo },
+  { label: "Citroen", logo: citroenLogo },
+  { label: "Fiat", logo: fiatLogo },
+  { label: "Honda", logo: hondaLogo },
+  { label: "Hyundai", logo: hyundaiLogo },
+  { label: "Jeep", logo: jeepLogo },
+  { label: "Mazda", logo: mazdaLogo },
+  { label: "MG", logo: mgLogo },
+  { label: "MINI", logo: miniLogo },
+  { label: "Renault", logo: renaultLogo },
+  { label: "SEAT", logo: seatLogo },
 ];
 
 const bodyTypeItems = [
@@ -104,13 +131,6 @@ const TrendingCard = ({ item }) => (
 
 export default function PopularSearches() {
   const [activeTab, setActiveTab] = useState("Make");
-  const scrollRef = useRef(null);
-
-  const scroll = (dir) => {
-    if (scrollRef.current) {
-      scrollRef.current.scrollBy({ left: dir * 200, behavior: "smooth" });
-    }
-  };
 
   const renderCards = () => {
     switch (activeTab) {
@@ -156,7 +176,7 @@ export default function PopularSearches() {
 
       {/* Cards Row */}
       <div className="cards-container">
-        <div className="cards-scroll" ref={scrollRef}>
+        <div className="cards-scroll">
           {renderCards()}
         </div>
 

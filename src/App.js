@@ -9,7 +9,7 @@ import DentsPaints from "./pages/DentsPaintsPage";
 // import Servicing from "./pages/Servicing";
 // import UsedVans from "./pages/UsedVans";
 // import Finance from "./pages/Finance";
-// import About from "./pages/About";
+import About from "./pages/About";
 // import OurStock from "./pages/OurStock";
 // import Contact from "./pages/Contact";
 
@@ -20,13 +20,13 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/cars" element={<CarsListing />} />  
         <Route path="/dents-paints" element={<DentsPaints />} />  
+        <Route path="/about" element={<About />} />  
         {/* <Route path="/part-exchange" element={<PartExchange />} />  
         <Route path="/vehicle-sourcing" element={<VehicleSourcing />} />  
         <Route path="/delivery" element={<Delivery />} />  
         <Route path="/servicing" element={<Servicing />} />  
         <Route path="/vans" element={<UsedVans />} />  
         <Route path="/finance" element={<Finance />} />  
-        <Route path="/about" element={<About />} />  
         <Route path="/stock" element={<OurStock />} /> 
         <Route path="/contact" element={<Contact />} />   */}
       </Routes>

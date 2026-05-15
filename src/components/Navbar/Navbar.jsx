@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
 import logo from "../../assets/images/noorix_logo.jpg";
@@ -148,10 +148,10 @@ function NavDrawer({ open, onClose }) {
             <FaShuttleVan size={18} className="nav-icon" />
             <span>Used Vans</span>
           </Link>
-          <Link to="/finance" className="drawer-nav-item">
+          {/* <Link to="/finance" className="drawer-nav-item">
             <FaMoneyBillWave size={18} className="nav-icon" />
             <span>Finance</span>
-          </Link>
+          </Link> */}
           <div className="drawer-nav-sell">
             <span>Looking to sell?</span>
           </div>
@@ -190,10 +190,35 @@ function NavDrawer({ open, onClose }) {
 export default function AffordableCarCentreHeader() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [contactOpen, setContactOpen] = useState(false);
+  const [hidden, setHidden] = useState(false);
+  const lastScrollY = useRef(0);
+  const SCROLL_THRESHOLD = 80; // how many px to scroll before navbar hides
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      if (currentScrollY < SCROLL_THRESHOLD) {
+        // Near the top — always show
+        setHidden(false);
+      } else if (currentScrollY > lastScrollY.current) {
+        // Scrolling down — hide
+        setHidden(true);
+      } else {
+        // Scrolling up — show
+        setHidden(false);
+      }
+
+      lastScrollY.current = currentScrollY;
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <>
-      <header className="acc-header w-full acc-header-relative">
+      <header className={`acc-header w-full acc-header-sticky${hidden ? " acc-header-hidden" : ""}`}>
         <div className="flex items-stretch w-full" style={{ minHeight: 72 }}>
 
           {/* Menu Button */}

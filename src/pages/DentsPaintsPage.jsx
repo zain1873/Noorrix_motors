@@ -1,11 +1,17 @@
 import React from "react";
 import Navbar from "../components/Navbar/Navbar";
 import NoorrixFooter from "../components/Footer/Footer";
-import { FaSprayCan, FaCalculator, FaClipboardList } from "react-icons/fa";
+import { FaSprayCan } from "react-icons/fa";
 import DentsAndPaints from "../components/DentsPaintsServices/DentsPaintsServices";
 import AboutSection from "../components/AboutSection/AboutSection";
 import TrustStrip from "../components/TrustStrip/TrustStrip";
-import CTA from "../components/CTA/CTA";
+import RepairProcess from "../components/RepairProcess/RepairProcess";
+import TrustSection from "../components/TrustSection/TrustSection";
+import WhatWeDo from "../components/WhatWeDo/WhatWeDo";
+import EstimateForm from "../components/EstimateForm/EstimateForm";
+import LocationContact from "../components/LocationContact/LocationContact";
+import FinalCTA from "../components/FinalCTA/FinalCTA";
+import BeforeAfter from "../components/BeforeAfter/BeforeAfter";
 
 function DentsPaints() {
   return (
@@ -33,7 +39,7 @@ function DentsPaints() {
           }}
         />
         <div className="relative z-20 max-w-6xl mx-auto px-4 py-24 md:py-36">
-          <div className="flex items-center gap-3 mb-4">
+          <div className="flex items-center gap-3 mb-4 hero-logo">
             <FaSprayCan size={32} className="text-blue-400" />
             <h1 className="text-4xl md:text-5xl font-bold">Dents & Paints</h1>
           </div>
@@ -64,20 +70,29 @@ function DentsPaints() {
         secondaryBtnLink="#services"
       />
 
-      <DentsAndPaints/>
+      {/* ─── What We Do (Service Grid) ─── */}
+      <WhatWeDo />
+
+      <BeforeAfter/>
+
+      {/* <DentsAndPaints/> */}
+
+      {/* ─── Why Car Owners Trust Us (Feature Grid) ─── */}
+      <TrustSection />
 
       {/* ─── Trust Strip (Quick Trust) ─── */}
       <TrustStrip />
 
-      {/* ─── CTA Section ─── */}
-      <CTA
-        title="Need a Quote?"
-        description="Contact our team today for a free, no-obligation estimate on your dent or paint repair. We'll get you back on the road looking your best."
-        primaryBtnText="Get Free Estimate"
-        primaryBtnIcon={<FaCalculator size={18} />}
-        secondaryBtnText="Book Inspection"
-        secondaryBtnIcon={<FaClipboardList size={18} />}
-      />
+      <RepairProcess/>
+
+      {/* ─── Estimate Form ─── */}
+      <EstimateForm />
+
+      {/* ─── Location & Contact ─── */}
+      <LocationContact />
+
+      {/* ─── Final CTA Banner ─── */}
+      <FinalCTA />
 
       <NoorrixFooter />
     </>

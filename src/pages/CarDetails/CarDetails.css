@@ -84,6 +84,9 @@ body {
   grid-template-columns: 1fr 340px;
   gap: 24px;
   align-items: start;
+  position: sticky;
+  top: 88px;
+  z-index: 1;
 }
 
 /* ===== IMAGE SLIDER ===== */
@@ -279,6 +282,7 @@ body {
   border-radius: 8px;
   padding: 12px 16px;
   margin-top: 12px;
+  margin-bottom: 20px;
 }
 
 .location-left {
@@ -331,6 +335,7 @@ body {
   border-radius: 8px;
   overflow: hidden;
   margin-top: 12px;
+  display: none;
 }
 
 .spec-item-details {
@@ -450,7 +455,7 @@ body {
 /* ===== RIGHT PANEL ===== */
 .right-panel {
   position: sticky;
-  top: 16px;
+  top: 20px;
   display: flex;
   flex-direction: column;
   gap: 12px;
@@ -731,25 +736,24 @@ body {
   height: 58px;
   border-radius: 50%;
   background: #1c1c1c;
-  border: 1.5px solid #2e2e2e;
+  border: 1.5px solid var(--theme-color);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #c9972a;
+  color: var(--theme-color);
   font-size: 22px;
   flex-shrink: 0;
   transition: border-color 0.2s, background 0.2s;
 }
 
 .dark-spec-circle:hover {
-  border-color: #c9972a;
   background: #1e1a10;
 }
 
 .dark-spec-label {
   font-size: 12px;
   font-weight: 700;
-  color: #c9972a;
+  color: #ffff;
   text-align: center;
 }
 
@@ -770,7 +774,7 @@ body {
 .dark-btn-reserve {
   width: 100%;
   padding: 14px;
-  background: #1d8cf8;
+  background: var(--theme-color);
   color: #fff;
   border: none;
   border-radius: 7px;
@@ -784,14 +788,11 @@ body {
   justify-content: center;
   gap: 8px;
   transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
-  font-family: inherit;
-  box-shadow: 0 2px 12px rgba(29,140,248,0.35);
 }
 
 .dark-btn-reserve:hover {
-  background: #1070d4;
+  background: #000;
   transform: translateY(-1px);
-  box-shadow: 0 4px 18px rgba(29,140,248,0.45);
 }
 
 .dark-btn-reserve:active {
@@ -825,8 +826,8 @@ body {
 }
 
 .dark-btn-outline:hover {
-  border-color: #c9972a;
-  color: #c9972a;
+  border-color: var(--theme-color);
+  color: var(--theme-color);
   background: rgba(201,151,42,0.06);
 }
 
@@ -1241,7 +1242,7 @@ body {
 }
 
 .vd-footer-notes p {
-  font-size: 12px;
+  font-size: 12px; 
   color: #777;
   line-height: 1.5;
 }

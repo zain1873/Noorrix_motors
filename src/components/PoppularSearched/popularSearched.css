@@ -5,15 +5,6 @@
   background: #fff;
 }
 
-/* ─── Title ───────────────────────────────────────────────────────────── */
-.section-title {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: #111;
-  margin: 0 0 20px;
-  letter-spacing: -0.3px;
-}
-
 /* ─── Tabs ────────────────────────────────────────────────────────────── */
 .tabs-wrapper {
   border-bottom: 1.5px solid #e5e7eb;
@@ -82,17 +73,11 @@
 
 .cards-scroll {
   display: flex;
+  flex-wrap: wrap;
   gap: 10px;
-  overflow-x: auto;
-  scroll-behavior: smooth;
-  scrollbar-width: none;
   padding: 6px 2px;
   flex: 1;
   min-width: 0;
-}
-
-.cards-scroll::-webkit-scrollbar {
-  display: none;
 }
 
 /* ─── Scroll Buttons ──────────────────────────────────────────────────── */
@@ -153,14 +138,14 @@
 
 /* ─── Make Card ───────────────────────────────────────────────────────── */
 .make-card {
-  width: 80px;
-  height: 72px;
+  width: 100px;
+  height: 90px;
   padding: 10px;
 }
 
 .make-logo {
   width: 64px;
-  height: 32px;
+  height: 80px;
   object-fit: contain;
   display: block;
 }
@@ -202,6 +187,9 @@
   flex-direction: column;
   gap: 4px;
   padding: 10px 8px;
+}
+.section-title {
+  margin-bottom: 40px;
 }
 
 .fuel-icon {

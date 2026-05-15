@@ -31,7 +31,7 @@ function Finance() {
           }}
         />
         <div className="relative z-20 max-w-6xl mx-auto px-4 py-24 md:py-36">
-          <div className="flex items-center gap-3 mb-4">
+          <div className="flex items-center gap-3 mb-4 hero-logo">
             <FaPiggyBank size={32} className="text-blue-400" />
             <h1 className="text-4xl md:text-5xl font-bold">Finance</h1>
           </div>

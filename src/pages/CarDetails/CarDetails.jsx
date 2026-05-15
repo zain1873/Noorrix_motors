@@ -16,6 +16,7 @@ import Navbar from "../../components/Navbar/Navbar"
 
 import "./CarDetails.css";
 import NoorrixFooter from "../../components/Footer/Footer";
+import MessageDealerCard from "../../components/DealerContactCard/DealerContactCard";
 
 // ----------------------------------------------------------------
 // DATA
@@ -198,24 +199,9 @@ function ImageSlider() {
 // ----------------------------------------------------------------
 // SPECS GRID
 // ----------------------------------------------------------------
-function SpecsGrid() {
-  return (
-    <div className="specs-grid-detail">
-      {SPECS.map((s, i) => (
-        <div className="spec-item-details" key={i}>
-          <span className="icon-specs">{s.icon}</span>
-          <div>
-            <div className="spec-label-grid">{s.label}</div>
-            <div className={`spec-value-grid ${s.green ? "green" : ""}`}>
-              {s.green && <HiCheckCircle size={14} />}
-              {s.value}
-            </div>
-          </div>
-        </div>
-      ))}
-    </div>
-  );
-}
+
+
+
 
 // ----------------------------------------------------------------
 // DESCRIPTION + CAR OVERVIEW SECTION (Image 1 - Light)
@@ -476,8 +462,9 @@ export default function CarsListing() {
                 View Map <FiChevronRight size={16} />
               </a>
             </div>
+            
+            <MessageDealerCard/>
 
-            <SpecsGrid />
 
     
           </div>
