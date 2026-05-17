@@ -192,21 +192,25 @@ export default function AffordableCarCentreHeader() {
   const [contactOpen, setContactOpen] = useState(false);
   const [hidden, setHidden] = useState(false);
   const lastScrollY = useRef(0);
-  const SCROLL_THRESHOLD = 80; // how many px to scroll before navbar hides
+  const hiddenRef = useRef(false);
+  const SCROLL_THRESHOLD = 80;
 
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
+      let next;
 
       if (currentScrollY < SCROLL_THRESHOLD) {
-        // Near the top — always show
-        setHidden(false);
+        next = false;
       } else if (currentScrollY > lastScrollY.current) {
-        // Scrolling down — hide
-        setHidden(true);
+        next = true;
       } else {
-        // Scrolling up — show
-        setHidden(false);
+        next = false;
+      }
+
+      if (next !== hiddenRef.current) {
+        hiddenRef.current = next;
+        setHidden(next);
       }
 
       lastScrollY.current = currentScrollY;

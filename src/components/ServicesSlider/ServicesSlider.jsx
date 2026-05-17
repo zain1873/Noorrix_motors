@@ -120,7 +120,7 @@ export default function CarServices() {
             <img
               src={current.image}
               alt={current.label}
-              key={current.label}
+              loading="lazy"
             />
             <div className="cs-image-overlay" />
             {/* <div className="cs-location-pin">

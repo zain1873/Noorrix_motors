@@ -1,8 +1,5 @@
 /* HeroBanner.css */
 
-/* Import Google Font for display heading */
-@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800&family=Lato:wght@300;400&display=swap');
-
 /* ─── Banner Wrapper ─── */
 .hero-banner {
   position: relative;
@@ -67,6 +64,7 @@
   flex-direction: column;
   gap: 16px;
   padding: 0 1.5rem;
+  will-change: transform, opacity;
   animation: fadeUp 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 

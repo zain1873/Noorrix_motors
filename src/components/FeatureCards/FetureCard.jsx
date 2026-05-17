@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
@@ -93,10 +93,27 @@ const carData = [
 
 const FeatureCard = () => {
   const navigate = useNavigate();
-  const [imgHovered, setImgHovered] = useState(null);
+  const swiperRef = useRef(null);
+  const containerRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (!swiperRef.current?.autoplay) return;
+        if (entry.isIntersecting) {
+          swiperRef.current.autoplay.start();
+        } else {
+          swiperRef.current.autoplay.stop();
+        }
+      },
+      { threshold: 0.1 }
+    );
+    if (containerRef.current) observer.observe(containerRef.current);
+    return () => observer.disconnect();
+  }, []);
 
   return (
-    <div className="card-wrapper wrapper sp">
+    <div className="card-wrapper wrapper sp" ref={containerRef}>
       {/* Section Heading */}
       <div className="section-heading">
         <h2 className="sec-title">Dealer's Top Picks</h2>
@@ -111,6 +128,7 @@ const FeatureCard = () => {
         loop={true}
         spaceBetween={16}
         grabCursor={true}
+        onSwiper={(swiper) => { swiperRef.current = swiper; }}
         breakpoints={{
           0:    { slidesPerView: 1 },
           480:  { slidesPerView: 2 },
@@ -122,15 +140,11 @@ const FeatureCard = () => {
           <SwiperSlide key={car.id}>
             <div className="mazda-card" onClick={() => navigate("/cars")}>
               {/* Image Section */}
-              <div
-                className="card-image-container"
-                onMouseEnter={() => setImgHovered(car.id)}
-                onMouseLeave={() => setImgHovered(null)}
-              >
+              <div className="card-image-container">
                 <img
                   src={car.img}
                   alt={car.title}
-                  className={`card-image ${imgHovered === car.id ? "card-image-zoom" : ""}`}
+                  className="card-image"
                 />
               </div>
 

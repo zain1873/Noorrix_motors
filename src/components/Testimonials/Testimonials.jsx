@@ -1,4 +1,5 @@
 // Testimonials.jsx
+import { useRef, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import { FaStar, FaCommentAlt } from "react-icons/fa";
@@ -56,8 +57,27 @@ const testimonials = [
 ];
 
 export default function Testimonials() {
+  const swiperRef = useRef(null);
+  const containerRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (!swiperRef.current?.autoplay) return;
+        if (entry.isIntersecting) {
+          swiperRef.current.autoplay.start();
+        } else {
+          swiperRef.current.autoplay.stop();
+        }
+      },
+      { threshold: 0.1 }
+    );
+    if (containerRef.current) observer.observe(containerRef.current);
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <section className="testimonials-section">
+    <section className="testimonials-section" ref={containerRef}>
       {/* Background */}
       <div className="testimonials-bg" />
       {/* Overlay */}
@@ -85,6 +105,7 @@ export default function Testimonials() {
           pagination={{
             clickable: true,
           }}
+          onSwiper={(swiper) => { swiperRef.current = swiper; }}
           breakpoints={{
             0: {
               slidesPerView: 1,
@@ -123,6 +144,7 @@ export default function Testimonials() {
                     src={t.avatar}
                     alt={t.author}
                     className="author-avatar"
+                    loading="lazy"
                   />
                   <div className="author-info">
                     <span className="author-name">{t.author}</span>
