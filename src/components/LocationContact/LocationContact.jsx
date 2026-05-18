@@ -28,7 +28,7 @@ const LocationContact = () => {
           <div className="location-map-wrapper">
             <iframe
               title="Noorrix Motors Location"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3619.234567890123!2d55.123456789012!3d25.123456789012!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjXCsDA3JzI0LjQiTiA1NcKwMDcnMjQuNCJF!5e0!3m2!1sen!2sae!4v1699999999999!5m2!1sen!2sae"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2455.122765432109!2d-0.4748039232848384!3d52.13021867970633!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4877b8a5dd5d5d5d%3A0x5d5d5d5d5d5d5d5d!2s84A+Ford+End+Road,+Bedford+MK40+4JX!5e0!3m2!1sen!2suk!4v1"
               allowFullScreen=""
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
@@ -45,7 +45,7 @@ const LocationContact = () => {
               <div className="location-card-content">
                 <span className="location-card-label">Address</span>
                 <span className="location-card-value">
-                  Industrial Area, Motor City, Dubai
+                  84A Ford End Road, Bedford, MK40 4JX
                 </span>
               </div>
             </div>
@@ -58,7 +58,7 @@ const LocationContact = () => {
               <div className="location-card-content">
                 <span className="location-card-label">Phone</span>
                 <span className="location-card-value">
-                  <a href="tel:+971501234567">+971 50 123 4567</a>
+                  <a href="tel:+4407399999188">07399 991 888</a>
                 </span>
               </div>
             </div>
@@ -71,8 +71,8 @@ const LocationContact = () => {
               <div className="location-card-content">
                 <span className="location-card-label">Email</span>
                 <span className="location-card-value">
-                  <a href="mailto:service@yourbrand.com">
-                    service@yourbrand.com
+                  <a href="mailto:info@noorrixmotors.co.uk">
+                    info@noorrixmotors.co.uk
                   </a>
                 </span>
               </div>

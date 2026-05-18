@@ -6,7 +6,7 @@ import DentsPaints from "./pages/DentsPaintsPage";
 //  import PartExchange from "./pages/PartExchange";
 // import VehicleSourcing from "./pages/VehicleSourcing";
 // import Delivery from "./pages/Delivery";
-// import Servicing from "./pages/Servicing";
+import Servicing from "./pages/Servicing";
 // import UsedVans from "./pages/UsedVans";
 // import Finance from "./pages/Finance";
 import About from "./pages/About";
@@ -22,10 +22,10 @@ function App() {
         <Route path="/dents-paints" element={<DentsPaints />} />  
         <Route path="/about" element={<About />} />  
         {/* <Route path="/part-exchange" element={<PartExchange />} />   */}
-        {/* <Route path="/vehicle-sourcing" element={<VehicleSourcing />} />  
-        <Route path="/delivery" element={<Delivery />} />  
+        {/* <Route path="/vehicle-sourcing" element={<VehicleSourcing />} />   */}
+        {/* <Route path="/delivery" element={<Delivery />} />   */}
         <Route path="/servicing" element={<Servicing />} />  
-        <Route path="/vans" element={<UsedVans />} />  
+        {/* <Route path="/vans" element={<UsedVans />} />  
         <Route path="/finance" element={<Finance />} />  
         <Route path="/stock" element={<OurStock />} />  */}
         <Route path="/contact" element={<Contact />} />  

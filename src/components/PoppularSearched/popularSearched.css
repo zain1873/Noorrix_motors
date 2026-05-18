@@ -144,8 +144,8 @@
 }
 
 .make-logo {
-  width: 64px;
-  height: 80px;
+  width: 100%;
+  height: 100%;
   object-fit: contain;
   display: block;
 }

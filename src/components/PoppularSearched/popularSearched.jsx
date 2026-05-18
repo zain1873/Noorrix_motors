@@ -6,7 +6,7 @@ import "./popularSearched.css";
 import volkswagenLogo from "../../assets/images/cars logo/volkswagen-01.png";
 import audiLogo from "../../assets/images/cars logo/audi-01.png";
 import mercedesLogo from "../../assets/images/cars logo/Mercedes-01.png";
-import toyotaLogo from "../../assets/images/cars logo/toyota-01.png";
+import toyotaLogo from "../../assets/images/cars logo/toyota-new.jpg";
 import nissanLogo from "../../assets/images/cars logo/nissan-01.png";
 import landRoverLogo from "../../assets/images/cars logo/land rover-01.png";
 import kiaLogo from "../../assets/images/cars logo/Kia-01.png";

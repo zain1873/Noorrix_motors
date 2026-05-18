@@ -17,13 +17,13 @@ const contactInfo = [
   {
     icon: <FaMapMarkerAlt />,
     title: "Our Location",
-    text: "123 Main Street, Birmingham, B1 1AA, United Kingdom",
+    text: "84A Ford End Road, Bedford, MK40 4JX, United Kingdom",
   },
   {
     icon: <FaPhoneAlt />,
     title: "Call Us",
-    text: "+44 1234 567890",
-    link: "tel:+441234567890",
+    text: "07399 991 888",
+    link: "tel:+4407399999188",
   },
   {
     icon: <FaEnvelope />,
@@ -98,7 +98,7 @@ function Contact() {
               Send a Message
             </a>
             <a
-              href="tel:+441234567890"
+              href="tel:+4407399999188"
               className="contact-hero-btn contact-hero-btn-secondary"
             >
               <FaPhoneAlt size={18} />
@@ -183,7 +183,7 @@ function Contact() {
                   <span className="contact-form-detail-icon">
                     <FaPhoneAlt />
                   </span>
-                  <span>+44 1234 567890</span>
+                  <span>07399 991 888</span>
                 </div>
                 <div className="contact-form-detail-item">
                   <span className="contact-form-detail-icon">
@@ -195,7 +195,7 @@ function Contact() {
                   <span className="contact-form-detail-icon">
                     <FaMapMarkerAlt />
                   </span>
-                  <span>123 Main Street, Birmingham, B1 1AA</span>
+                  <span>84A Ford End Road, Bedford, MK40 4JX</span>
                 </div>
                 <div className="contact-form-detail-item">
                   <span className="contact-form-detail-icon">
@@ -306,7 +306,7 @@ function Contact() {
             <iframe
               className="contact-map-iframe"
               title="Noorrix Motors Location"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2431.789043733934!2d-1.8935569232665086!3d52.47617965215301!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4870bd0c5c3b0b0f%3A0x9c5c5b5b5b5b5b5b!2sBirmingham%2C%20UK!5e0!3m2!1sen!2s!4v1"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2455.122765432109!2d-0.4748039232848384!3d52.13021867970633!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4877b8a5dd5d5d5d%3A0x5d5d5d5d5d5d5d5d!2s84A+Ford+End+Road,+Bedford+MK40+4JX!5e0!3m2!1sen!2suk!4v1"
               allowFullScreen=""
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"

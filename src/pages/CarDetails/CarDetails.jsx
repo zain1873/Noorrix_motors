@@ -4,7 +4,7 @@ import { useState } from "react";
 import { FiChevronLeft, FiChevronRight, FiChevronDown, FiChevronUp, FiX } from "react-icons/fi";
 import { FaHeart, FaRegHeart, FaStar, FaPhoneAlt, FaEnvelope } from "react-icons/fa";
 import { MdLocationOn, MdOutlineDirectionsCar, MdGridView, MdColorLens } from "react-icons/md";
-import { BsCalendar3, BsSpeedometer2, BsFuelPump, BsGear, BsCalendarCheck, BsShieldCheck } from "react-icons/bs";
+import { BsCalendar3, BsSpeedometer2, BsFuelPump, BsGear, BsCalendarCheck, BsShieldCheck, BsClock, BsCheckCircle } from "react-icons/bs";
 import { TbEngine } from "react-icons/tb";
 import { GiCarDoor } from "react-icons/gi";
 import { RiPaintBrushLine } from "react-icons/ri";
@@ -17,6 +17,7 @@ import Navbar from "../../components/Navbar/Navbar"
 import "./CarDetails.css";
 import NoorrixFooter from "../../components/Footer/Footer";
 import MessageDealerCard from "../../components/DealerContactCard/DealerContactCard";
+import SimilarCarsSlider from "./SimilarCarsSlider";
 
 // ----------------------------------------------------------------
 // DATA
@@ -266,6 +267,86 @@ const ACCORDION_CONTENT = {
   safety:      "This vehicle has been through a full safety inspection. All safety systems are operational and the vehicle has a clear history check with no previous accidents or structural damage recorded.",
 };
 
+// ----------------------------------------------------------------
+// VEHICLE LOCATION SECTION
+// ----------------------------------------------------------------
+const VEHICLE_HOURS = [
+  { day: "Monday",    hours: "10:00 AM to 06:00 PM" },
+  { day: "Tuesday",   hours: "10:00 AM to 06:00 PM" },
+  { day: "Wednesday", hours: "10:00 AM to 06:00 PM" },
+  { day: "Thursday",  hours: "10:00 AM to 06:00 PM" },
+  { day: "Friday",    hours: "10:00 AM to 06:00 PM" },
+  { day: "Saturday",  hours: "10:00 AM to 06:00 PM" },
+  { day: "Sunday",    hours: "11:00 AM to 04:00 PM" },
+];
+
+function VehicleLocationSection() {
+  const [postcode, setPostcode] = useState("");
+  const days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+  const today = days[new Date().getDay()];
+
+  const handleDirections = () => {
+    if (postcode.trim()) {
+      window.open(
+        `https://www.google.com/maps/dir/${encodeURIComponent(postcode)}/84A+Ford+End+Road,+Bedford,+MK40+4JX`,
+        "_blank"
+      );
+    }
+  };
+
+  return (
+    <div className="vl-wrapper">
+      <div className="vl-inner">
+        <h2 className="vl-title">Vehicle location</h2>
+        <p className="vl-address">
+          This vehicle is located at 84A Ford End Road Bedford England MK40 4JX
+        </p>
+
+        <div className="vl-phone">
+          <FaPhoneAlt size={13} />
+          <span>Phone# 07399999188</span>
+        </div>
+
+        <div className="vl-hours-list">
+          {VEHICLE_HOURS.map((item) => (
+            <div
+              key={item.day}
+              className={`vl-row ${item.day === today ? "vl-row--today" : ""}`}
+            >
+              <div className="vl-row-left">
+                <BsClock className="vl-icon" />
+                <span className="vl-day-name">{item.day}</span>
+              </div>
+              <div className="vl-row-right">
+                <BsCheckCircle className="vl-icon" />
+                <span className="vl-day-hours">{item.hours}</span>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div className="vl-directions-card">
+          <div className="vl-dir-text">
+            <div className="vl-dir-title">Get directions</div>
+            <div className="vl-dir-sub">Enter your location</div>
+          </div>
+          <div className="vl-dir-form">
+            <input
+              type="text"
+              className="vl-input"
+              placeholder="Postcode"
+              value={postcode}
+              onChange={(e) => setPostcode(e.target.value)}
+              onKeyDown={(e) => e.key === "Enter" && handleDirections()}
+            />
+            <button className="vl-go-btn" onClick={handleDirections}>Go</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function VehicleDescriptionSection() {
   const [expanded, setExpanded] = useState(false);
   const [openAccordion, setOpenAccordion] = useState(null);
@@ -277,7 +358,7 @@ function VehicleDescriptionSection() {
 
   return (
     <div className="vd-wrapper">
-      <h2 className="vd-title">Vehicle Description</h2>
+      <h2 className="vd-title">Car Specification</h2>
       <p className="vd-body">{expanded ? fullText : shortText.slice(0, 400) + "…"}</p>
       <button className="vd-read-more" onClick={() => setExpanded(v => !v)}>
         {expanded ? "Read Less −" : "Read More +"}
@@ -454,7 +535,7 @@ export default function CarsListing() {
                 <MdLocationOn size={20} color="#888" />
                 <div>
                   <span className="label">Car location</span>
-                  Macduff{" "}
+                  Bedford{" "}
                   <a href="#" className="location-link">(See distance)</a>
                 </div>
               </div>
@@ -472,7 +553,7 @@ export default function CarsListing() {
           {/* ======== RIGHT COLUMN ======== */}
           <div className="right-panel">
             <DarkSpecCard />
-            <button className="rate-listing-btn">Rate this listing</button>
+            {/* <button className="rate-listing-btn">Rate this listing</button> */}
           </div>
 
         </div>
@@ -483,6 +564,8 @@ export default function CarsListing() {
           {/* ── NEW SECTIONS ADDED BELOW ── */}
             <DescriptionOverviewSection />
             <VehicleDescriptionSection />
+            <VehicleLocationSection />
+            <SimilarCarsSlider />
 
       <NoorrixFooter/>
     </>
