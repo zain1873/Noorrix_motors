@@ -1,7 +1,9 @@
 import React from "react";
+import dentsPaintsBanner from "../assets/images/banners/dents&paints.jpg";
+import "./DentsPaintsPage.css";
 import Navbar from "../components/Navbar/Navbar";
 import NoorrixFooter from "../components/Footer/Footer";
-import { FaSprayCan } from "react-icons/fa";
+import { FaSprayCan, FaPhoneAlt } from "react-icons/fa";
 import DentsAndPaints from "../components/DentsPaintsServices/DentsPaintsServices";
 import AboutSection from "../components/AboutSection/AboutSection";
 import TrustStrip from "../components/TrustStrip/TrustStrip";
@@ -30,22 +32,49 @@ function DentsPaints() {
       </div>
 
       {/* ─── Hero Section ─── */}
-      <section className="relative bg-gray-900 text-white overflow-hidden">
-        <div className="absolute inset-0 bg-black/60 z-10" />
-        <div 
-          className="absolute inset-0 bg-cover bg-center"
-          style={{
-            backgroundImage: "url('https://images.unsplash.com/photo-1560066984-138dadb4c035?w=1600&q=80')",
-          }}
+      <section className="dp-hero">
+        {/* Background Image */}
+        <div
+          className="dp-hero-bg"
+          style={{ backgroundImage: `url(${dentsPaintsBanner})` }}
         />
-        <div className="relative z-20 max-w-6xl mx-auto px-4 py-24 md:py-36">
-          <div className="flex items-center gap-3 mb-4 hero-logo">
-            <FaSprayCan size={32} className="text-blue-400" />
-            <h1 className="text-4xl md:text-5xl font-bold">Dents & Paints</h1>
-          </div>
-          <p className="text-lg md:text-xl text-gray-200 max-w-2xl">
-            Restore your car’s original finish with expert dent removal, scratch repair, and precision paintwork.
+
+        {/* Dark Overlay */}
+        <div className="dp-hero-overlay" />
+
+        {/* Top Gradient Accent */}
+        <div className="dp-hero-top-accent" />
+
+        {/* Bottom Glow */}
+        <div className="dp-hero-glow" />
+
+        {/* Content */}
+        <div className="dp-hero-container">
+          <span className="dp-hero-tag">
+            <FaSprayCan size={13} />
+            Dents &amp; Paints
+          </span>
+
+          <h1 className="dp-hero-title">
+            Expert Repair &amp; <span>Precision Paintwork</span>
+          </h1>
+
+          <p className="dp-hero-subtitle">
+            Restore your car’s original finish with professional dent removal,
+            scratch repair, and colour-matched paintwork — all to showroom
+            standard.
           </p>
+
+          <div className="dp-hero-buttons">
+            <a href="#estimate-form" className="dp-hero-btn dp-hero-btn-primary">
+              <FaSprayCan size={18} />
+              Get a Free Quote
+            </a>
+            <a href="tel:+4407399999188" className="dp-hero-btn dp-hero-btn-secondary">
+              <FaPhoneAlt size={18} />
+              Call Us Now
+            </a>
+          </div>
         </div>
       </section>
 

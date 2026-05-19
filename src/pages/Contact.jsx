@@ -1,4 +1,5 @@
 import React from "react";
+import contactBanner from "../assets/images/banners/contact-banner.jpg";
 import {
   FaMapMarkerAlt,
   FaPhoneAlt,
@@ -66,7 +67,7 @@ function Contact() {
           className="contact-hero-bg"
           style={{
             backgroundImage:
-              "url('https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=1600&q=80')",
+              `url(${contactBanner})`,
           }}
         />
 

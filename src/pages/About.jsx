@@ -1,4 +1,5 @@
 import React from "react";
+import aboutBanner from "../assets/images/banners/about-banner.jpg";
 import {
   FaShieldAlt,
   FaHandshake,
@@ -121,7 +122,7 @@ function About() {
           className="about-hero-bg"
           style={{
             backgroundImage:
-              "url('https://images.unsplash.com/photo-1560066984-138dadb4c035?w=1600&q=80')",
+              `url(${aboutBanner})`,
           }}
         />
 
