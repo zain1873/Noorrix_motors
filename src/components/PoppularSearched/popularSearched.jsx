@@ -2,33 +2,30 @@ import React, { useState } from "react";
 import { FiTrendingUp } from "react-icons/fi";
 import "./popularSearched.css";
 
-// Car brand logos from assets folder
-import volkswagenLogo from "../../assets/images/cars logo/volkswagen-01.png";
-import audiLogo from "../../assets/images/cars logo/audi-01.png";
-import mercedesLogo from "../../assets/images/cars logo/Mercedes-01.png";
-import toyotaLogo from "../../assets/images/cars logo/toyota-new.jpg";
-import nissanLogo from "../../assets/images/cars logo/nissan-01.png";
-import landRoverLogo from "../../assets/images/cars logo/land rover-01.png";
-import kiaLogo from "../../assets/images/cars logo/Kia-01.png";
-import citroenLogo from "../../assets/images/cars logo/Citroen-01.png";
-import fiatLogo from "../../assets/images/cars logo/fiat-01.png";
-import hondaLogo from "../../assets/images/cars logo/honda-01.png";
-import hyundaiLogo from "../../assets/images/cars logo/hyundai.png";
-import jeepLogo from "../../assets/images/cars logo/jeep-01.png";
-import mazdaLogo from "../../assets/images/cars logo/mazda-01.png";
-import mgLogo from "../../assets/images/cars logo/MG-01.png";
-import miniLogo from "../../assets/images/cars logo/MINI-01.png";
-import renaultLogo from "../../assets/images/cars logo/Renault-01.png";
-import seatLogo from "../../assets/images/cars logo/SEAT-01.png";
+import volkswagenLogo from "../../assets/images/car-logos/volkswagen-01.png";
+import audiLogo from "../../assets/images/car-logos/audi-01.png";
+import bmwLogo from "../../assets/images/car-logos/BMW-01.png";
+import toyotaLogo from "../../assets/images/car-logos/toyota-01.png";
+import nissanLogo from "../../assets/images/car-logos/nissan-01.png";
+import landRoverLogo from "../../assets/images/car-logos/land rover-01.png";
+import kiaLogo from "../../assets/images/car-logos/Kia-01.png";
+import citroenLogo from "../../assets/images/car-logos/Citroen-01.png";
+import fiatLogo from "../../assets/images/car-logos/fiat-01.png";
+import hondaLogo from "../../assets/images/car-logos/honda-01.png";
+import jeepLogo from "../../assets/images/car-logos/jeep-01.png";
+import mazdaLogo from "../../assets/images/car-logos/mazda-01.png";
+import mgLogo from "../../assets/images/car-logos/MG-01.png";
+import miniLogo from "../../assets/images/car-logos/MINI-01.png";
+import renaultLogo from "../../assets/images/car-logos/Renault-01.png";
+import seatLogo from "../../assets/images/car-logos/SEAT-01.png";
+import vauxhallLogo from "../../assets/images/car-logos/vauxhall-01.png";
 
 const tabs = ["Make", "Body Type", "Fuel", "Gearbox", "Trending"];
 
 const makeItems = [
   { label: "Volkswagen", logo: volkswagenLogo },
   { label: "Audi", logo: audiLogo },
-  { label: "BMW", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/BMW.svg/120px-BMW.svg.png" },
-  { label: "Mercedes", logo: mercedesLogo },
-  { label: "Ford", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Ford_logo_flat.svg/120px-Ford_logo_flat.svg.png" },
+  { label: "BMW", logo: bmwLogo },
   { label: "Toyota", logo: toyotaLogo },
   { label: "Nissan", logo: nissanLogo },
   { label: "Land Rover", logo: landRoverLogo },
@@ -36,13 +33,13 @@ const makeItems = [
   { label: "Citroen", logo: citroenLogo },
   { label: "Fiat", logo: fiatLogo },
   { label: "Honda", logo: hondaLogo },
-  { label: "Hyundai", logo: hyundaiLogo },
   { label: "Jeep", logo: jeepLogo },
   { label: "Mazda", logo: mazdaLogo },
   { label: "MG", logo: mgLogo },
   { label: "MINI", logo: miniLogo },
   { label: "Renault", logo: renaultLogo },
   { label: "SEAT", logo: seatLogo },
+  { label: "Vauxhall", logo: vauxhallLogo },
 ];
 
 const bodyTypeItems = [
