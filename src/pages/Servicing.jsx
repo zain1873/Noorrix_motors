@@ -1,43 +1,179 @@
 import React from "react";
+import servicingBanner from "../assets/images/banners/servicing-banner.jpg";
+import "./Servicing.css";
 import Navbar from "../components/Navbar/Navbar";
 import NoorrixFooter from "../components/Footer/Footer";
-import { FaTools, FaCheckCircle, FaOilCan, FaCarBattery, FaTachometerAlt, FaCalculator, FaClipboardList } from "react-icons/fa";
+import {
+  FaTools,
+  FaCheckCircle,
+  FaOilCan,
+  FaCarBattery,
+  FaTachometerAlt,
+  FaPhoneAlt,
+  FaCalendarAlt,
+  FaShieldAlt,
+  FaUserTie,
+  FaCog,
+  FaClipboardCheck,
+  FaCarSide,
+  FaStar,
+} from "react-icons/fa";
 import AboutSection from "../components/AboutSection/AboutSection";
-import CTA from "../components/CTA/CTA";
+import FinalCTA from "../components/FinalCTA/FinalCTA";
+
+const packages = [
+  {
+    name: "Interim Service",
+    icon: <FaOilCan size={24} />,
+    desc: "An oil and filter change plus essential safety checks. Ideal for high-mileage drivers or between full services.",
+    includes: [
+      "Engine oil & filter change",
+      "Tyre pressure & condition check",
+      "Brake fluid level check",
+      "Lights & electrics inspection",
+      "Visual underbody check",
+    ],
+    featured: false,
+  },
+  {
+    name: "Full Service",
+    icon: <FaTachometerAlt size={24} />,
+    desc: "Comprehensive inspection covering all major systems. Keeps your manufacturer warranty valid and your car road-ready.",
+    includes: [
+      "Everything in Interim Service",
+      "Air & cabin filter replacement",
+      "Brake pad & disc inspection",
+      "Suspension & steering check",
+      "Battery & charging system test",
+      "Service book stamp",
+    ],
+    featured: true,
+    badge: "Most Popular",
+  },
+  {
+    name: "Major Service",
+    icon: <FaCarBattery size={24} />,
+    desc: "Our most thorough package — everything in the Full Service plus cambelt, coolant flush, and deep system diagnostics.",
+    includes: [
+      "Everything in Full Service",
+      "Cambelt / timing chain check",
+      "Coolant flush & refill",
+      "Spark plug replacement",
+      "Full diagnostic scan",
+      "Road test & report",
+    ],
+    featured: false,
+  },
+];
+
+const whyUs = [
+  {
+    icon: <FaUserTie size={22} />,
+    title: "Qualified Technicians",
+    desc: "Fully trained and experienced with all makes and models, from superminis to SUVs.",
+  },
+  {
+    icon: <FaShieldAlt size={22} />,
+    title: "Genuine Quality Parts",
+    desc: "We use parts that meet or exceed manufacturer specifications — never cheap imitations.",
+  },
+  {
+    icon: <FaClipboardCheck size={22} />,
+    title: "Service History Stamped",
+    desc: "Your service book is stamped every time, protecting your vehicle's value and warranty.",
+  },
+  {
+    icon: <FaStar size={22} />,
+    title: "Transparent Pricing",
+    desc: "No hidden charges. You'll receive a full itemised quote before any work begins.",
+  },
+  {
+    icon: <FaCarSide size={22} />,
+    title: "All Makes & Models",
+    desc: "From hatchbacks to prestige cars — our workshop handles everything with equal care.",
+  },
+  {
+    icon: <FaCog size={22} />,
+    title: "Latest Diagnostic Tools",
+    desc: "We invest in the latest equipment so no fault goes undetected.",
+  },
+];
+
+const steps = [
+  {
+    number: "01",
+    title: "Book Online or Call",
+    desc: "Choose a date that works for you — online booking or give us a ring.",
+  },
+  {
+    number: "02",
+    title: "Drop Off Your Car",
+    desc: "Bring your vehicle to our workshop. We'll check it in and confirm the work scope.",
+  },
+  {
+    number: "03",
+    title: "We Service Your Car",
+    desc: "Our technicians carry out all checks and work to manufacturer standards.",
+  },
+  {
+    number: "04",
+    title: "Collect & Drive Away",
+    desc: "Pick up a freshly serviced car with a full report and stamped service book.",
+  },
+];
 
 function Servicing() {
   return (
     <>
       <Navbar />
-      
+
       {/* ── Breadcrumb ── */}
       <div className="bg-white border-b border-gray-200">
         <div className="max-w-6xl mx-auto px-4 py-3 text-sm">
-          <a href="/" className=" breadcrumb text-gray-500 hover:text-blue-600 transition-colors">Home</a>
+          <a href="/" className="breadcrumb text-gray-500 hover:text-blue-600 transition-colors">Home</a>
           <span className="mx-2 text-gray-300">›</span>
-          <a href="/services" className=" breadcrumb text-gray-500 hover:text-blue-600 transition-colors">Services</a>
+          <a href="/services" className="breadcrumb text-gray-500 hover:text-blue-600 transition-colors">Services</a>
           <span className="mx-2 text-gray-300">›</span>
           <span className="text-gray-900 font-medium">Servicing</span>
         </div>
       </div>
 
-      {/* ─── Hero Section ─── */}
-      <section className="relative bg-gray-900 text-white overflow-hidden">
-        <div className="absolute inset-0 bg-black/60 z-10" />
-        <div 
-          className="absolute inset-0 bg-cover bg-center"
-          style={{
-            backgroundImage: "url('https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=1600&q=80')",
-          }}
+      {/* ─── Hero Banner ─── */}
+      <section className="sv-hero">
+        <div
+          className="sv-hero-bg"
+          style={{ backgroundImage: `url(${servicingBanner})` }}
         />
-        <div className="relative z-20 max-w-6xl mx-auto px-4 py-24 md:py-36">
-          <div className="flex items-center gap-3 mb-4 hero-logo">
-            <FaTools size={32} className="text-blue-400" />
-            <h1 className="text-4xl md:text-5xl font-bold">Servicing</h1>
-          </div>
-          <p className="text-lg md:text-xl text-gray-200 max-w-2xl">
-            Professional vehicle servicing and maintenance to keep your car running smoothly and safely all year round.
+        <div className="sv-hero-overlay" />
+        <div className="sv-hero-top-accent" />
+        <div className="sv-hero-glow" />
+
+        <div className="sv-hero-container">
+          <span className="sv-hero-tag">
+            <FaTools size={13} />
+            Vehicle Servicing
+          </span>
+
+          <h1 className="sv-hero-title">
+            Professional Servicing &amp; <span>Expert Maintenance</span>
+          </h1>
+
+          <p className="sv-hero-subtitle">
+            Keep your car running safely and smoothly all year round with our
+            comprehensive servicing packages — carried out by qualified
+            technicians using quality parts.
           </p>
+
+          <div className="sv-hero-buttons">
+            <a href="/contact" className="sv-hero-btn sv-hero-btn-primary">
+              <FaCalendarAlt size={17} />
+              Book a Service
+            </a>
+            <a href="tel:+4407399999188" className="sv-hero-btn sv-hero-btn-secondary">
+              <FaPhoneAlt size={17} />
+              Call Us Now
+            </a>
+          </div>
         </div>
       </section>
 
@@ -61,67 +197,71 @@ function Servicing() {
         secondaryBtnLink="#packages"
       />
 
-      {/* ─── Services Grid ─── */}
-      <section className="py-16 md:py-20 bg-white">
-        <div className="max-w-6xl mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-12">
-            Our Servicing Options
+      {/* ─── Service Packages ─── */}
+      <section className="sv-packages" id="packages">
+        <div className="sv-packages-inner">
+          <span className="sv-section-tag">Our Packages</span>
+          <h2 className="sv-section-title">
+            Choose Your <span>Service Package</span>
           </h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            {/* Card 1 */}
-            <div className="bg-gray-50 rounded-xl p-8 text-center shadow-md hover:shadow-lg transition-shadow">
-              <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-5">
-                <FaOilCan size={28} className="text-blue-600" />
-              </div>
-              <h3 className="text-xl font-bold text-gray-800 mb-3">Interim Service</h3>
-              <p className="text-gray-600 leading-relaxed">
-                An oil and filter change plus basic checks. Ideal for high-mileage drivers or between full services.
-              </p>
-            </div>
+          <p className="sv-section-subtitle">
+            From a quick interim check to a full major overhaul — we have a
+            package to suit every car and every budget.
+          </p>
+          <div className="sv-accent-bar" />
 
-            {/* Card 2 */}
-            <div className="bg-gray-50 rounded-xl p-8 text-center shadow-md hover:shadow-lg transition-shadow">
-              <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-5">
-                <FaTachometerAlt size={28} className="text-blue-600" />
+          <div className="sv-packages-grid">
+            {packages.map((pkg) => (
+              <div
+                key={pkg.name}
+                className={`sv-package-card${pkg.featured ? " featured" : ""}`}
+              >
+                {pkg.badge && (
+                  <span className="sv-package-badge">{pkg.badge}</span>
+                )}
+                <div className="sv-package-icon">{pkg.icon}</div>
+                <h3 className="sv-package-name">{pkg.name}</h3>
+                <p className="sv-package-desc">{pkg.desc}</p>
+                <div className="sv-package-divider" />
+                <p className="sv-package-includes-label">What's Included</p>
+                <ul className="sv-package-includes">
+                  {pkg.includes.map((item) => (
+                    <li key={item} className="sv-package-include-item">
+                      <FaCheckCircle size={14} />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+                <a href="/contact" className="sv-package-btn">
+                  <FaCalendarAlt size={15} />
+                  Book This Service
+                </a>
               </div>
-              <h3 className="text-xl font-bold text-gray-800 mb-3">Full Service</h3>
-              <p className="text-gray-600 leading-relaxed">
-                Comprehensive inspection covering engine, brakes, suspension, fluids, and more. Keeps your warranty valid.
-              </p>
-            </div>
-
-            {/* Card 3 */}
-            <div className="bg-gray-50 rounded-xl p-8 text-center shadow-md hover:shadow-lg transition-shadow">
-              <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-5">
-                <FaCarBattery size={28} className="text-blue-600" />
-              </div>
-              <h3 className="text-xl font-bold text-gray-800 mb-3">Major Service</h3>
-              <p className="text-gray-600 leading-relaxed">
-                Everything in the full service plus cambelt replacement, coolant flush, and comprehensive system checks.
-              </p>
-            </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* ─── Benefits ─── */}
-      <section className="py-16 md:py-20 bg-gray-50">
-        <div className="max-w-6xl mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-12">
-            Why Service With Us
+      {/* ─── Why Choose Us ─── */}
+      <section className="sv-why">
+        <div className="sv-why-inner">
+          <span className="sv-section-tag">Why Noorrix</span>
+          <h2 className="sv-section-title">
+            Why Service <span>With Us</span>
           </h2>
-          <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-            {[
-              { title: "Qualified Technicians", desc: "Our team are fully trained and experienced with all makes and models." },
-              { title: "Genuine Parts", desc: "We use quality parts that meet manufacturer specifications." },
-              { title: "Competitive Pricing", desc: "Affordable service packages with no hidden costs." },
-              { title: "Service History Stamped", desc: "Your service book will be stamped to maintain your vehicle's history." },
-            ].map((item, i) => (
-              <div key={i} className="flex items-start gap-4 bg-white p-6 rounded-lg shadow-sm">
-                <FaCheckCircle size={22} className="text-green-500 mt-0.5 flex-shrink-0" />
+          <p className="sv-section-subtitle">
+            We believe servicing should be straightforward, honest, and great
+            value — every single time.
+          </p>
+          <div className="sv-accent-bar" />
+
+          <div className="sv-why-grid">
+            {whyUs.map((item) => (
+              <div key={item.title} className="sv-why-card">
+                <div className="sv-why-icon">{item.icon}</div>
                 <div>
-                  <h3 className="font-bold text-gray-800 mb-1">{item.title}</h3>
-                  <p className="text-gray-600">{item.desc}</p>
+                  <h3 className="sv-why-card-title">{item.title}</h3>
+                  <p className="sv-why-card-desc">{item.desc}</p>
                 </div>
               </div>
             ))}
@@ -129,15 +269,33 @@ function Servicing() {
         </div>
       </section>
 
-      {/* ─── CTA Section ─── */}
-      <CTA
-        title="Book Your Service Today"
-        description="Keep your car in peak condition with our professional servicing. Call us to schedule an appointment at your convenience."
-        primaryBtnText="Get Free Estimate"
-        primaryBtnIcon={<FaCalculator size={18} />}
-        secondaryBtnText="Book Inspection"
-        secondaryBtnIcon={<FaClipboardList size={18} />}
-      />
+      {/* ─── How It Works ─── */}
+      <section className="sv-process">
+        <div className="sv-process-inner">
+          <div style={{ textAlign: "center", marginBottom: "50px" }}>
+            <span className="sv-section-tag">Simple Process</span>
+            <h2 className="sv-section-title">
+              How It <span>Works</span>
+            </h2>
+            <p className="sv-section-subtitle" style={{ margin: "0 auto" }}>
+              Getting your car serviced with us is quick and hassle-free.
+            </p>
+          </div>
+
+          <div className="sv-steps">
+            {steps.map((step) => (
+              <div key={step.number} className="sv-step">
+                <div className="sv-step-number">{step.number}</div>
+                <h3 className="sv-step-title">{step.title}</h3>
+                <p className="sv-step-desc">{step.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ─── Final CTA ─── */}
+      <FinalCTA />
 
       <NoorrixFooter />
     </>
